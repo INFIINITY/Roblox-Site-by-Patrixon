@@ -1,0 +1,152 @@
+/* Custom Czcionka od Robloxa */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    /* czcionka calej strony */
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    /* zdjecie w tle strony */
+    background-image: url('zdjecia/tlo.jpg');
+    /* powiększenie tła */
+    background-size: 150%;
+  }
+  
+body::before {
+    /* przyciemnienie tła */
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    z-index: -1;
+}
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+  
+.logo {
+    max-width: 100%;
+    /* pomniejszenie loga */
+    transform: scale(0.2);
+}
+  
+.container > button,
+form > button,
+form > input,
+.containerRejestracja > input {
+    padding: 10px;
+    width: 325px;
+    font-size: 18px;
+    margin: 5px 0;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+}
+
+.rejestracjaPrzycisk {
+    background-color: #08b46c;
+    border: none !important;
+    color: white !important;
+    width: 97%;
+}
+
+.container > .rejestrPrzycisk:hover,
+form > .zalogujPrzycisk:hover,
+.rejestracjaPrzycisk:hover {
+    opacity: 0.8;
+}
+
+.container > .logPrzycisk {
+    background-color: rgba(255, 255, 255, 0.0); /* białe tło z przezroczystością 50% */
+    color: rgb(201, 201, 201);
+}
+
+.container > .logPrzycisk:hover {
+    opacity: 0.65;
+}
+
+form > input,
+.containerRejestracja > input {
+    width: 93.5%;
+    cursor: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1.5px solid rgb(129, 129, 129);
+    color: white;
+    font-weight: normal;
+}
+
+form > input::placeholder,
+.containerRejestracja > input::placeholder {
+    color: rgb(129, 129, 129);
+}
+
+form > input:hover {
+    border-color: white;
+}
+
+.powrot{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerRejestracja {
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.4rem;
+    width: 30%;
+    margin: 0 auto;
+    background-color: #3a3b3d;
+    padding: 0 20px 20px;
+    color: white;
+}
+  
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    font-size: 150%;
+    padding: 2% 0 2% 0;
+}
+  
+.srodekHeader {
+    flex-grow: 1;
+    text-align: center;
+}
+  
+.powrotRejestracja a {
+    text-decoration: none;
+    color: white;
+}
+
+hr {
+    width: 100%;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
