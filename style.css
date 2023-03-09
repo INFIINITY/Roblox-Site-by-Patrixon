@@ -1,0 +1,60 @@
+/* Custom Czcionka od Robloxa */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    /* czcionka calej strony */
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    /* zdjecie w tle strony */
+    background-image: url('zdjecia/tlo.jpg');
+    /* powiększenie tła */
+    background-size: 150%;
+}
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+  
+.logo {
+    max-width: 100%;
+    /* pomniejszenie loga */
+    transform: scale(0.2);
+}
+  
+.container > button {
+    padding: 10px;
+    width: 325px;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.container > .rejestrPrzycisk:hover {
+    opacity: 0.8;
+}
+
+.container > .rejestrPrzycisk {
+    color: rgb(37, 37, 37);
+}
+
+.container > .logPrzycisk {
+    background-color: rgba(255, 255, 255, 0.0); /* białe tło z przezroczystością 50% */
+    color: rgb(201, 201, 201);
+}
+
+.container > .logPrzycisk:hover {
+    opacity: 0.65;
+}
+
+
+  
