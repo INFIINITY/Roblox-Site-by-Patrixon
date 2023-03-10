@@ -165,3 +165,33 @@ hr {
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
+
+/* Przyciski wyboru płci */
+.plecPrzyciskM,
+.plecPrzyciskK {
+    padding: 10px;
+    width: 270px;
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.50);
+    color: rgb(129, 129, 129);
+}
+
+/* Przycisk Mężczyzny po kliknięciu */
+.plecPrzyciskM.wybrano > i {
+    color: #0390fc;
+}
+
+/* Przycisk kobiety po kliknięciu */
+.plecPrzyciskK.wybrano > i {
+    color: #f003fc;
+}
+
+/* Tło przycisku po kliknięciu */
+.wybranoTlo {
+    background-color: white;
+}

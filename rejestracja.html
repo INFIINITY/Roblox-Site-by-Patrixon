@@ -9,57 +9,33 @@
     <link rel="stylesheet" href="start.css">
     <title>Roblox | Rejestracja</title>
     <style>
-        .plecPrzycisk {
-            padding: 10px;
-            width: 270px;
-            font-size: 18px;
-            background-color: white;
-            border: 1px solid white;
-            border-radius: 0.4rem;
-            cursor: pointer;
-            font-weight: bold;
-            background-color: rgba(0, 0, 0, 0.50);
-            color: rgb(129, 129, 129);
-        }
-
-        .plecPrzycisk:hover {
-            background-color: rgba(0, 0, 0, 0.75);
-        }
-
-        .plecPrzycisk.mezczyzna {
-            background-color: white;
-            color: black;
-        }
-
-        .plecPrzycisk.kobieta {
-            background-color: pink;
-            color: white;
-        }
-    </style>
+</style>
 </head>
 <body>
 <body>
 <div class="containerRejestracja">
     <div class="headerContainer">
         <div class="powrotRejestracja">
-            <a href="Z&R.php"><i class="fa-solid fa-x"></i></a>
+            <a href="Z&R.html"><i class="fa-solid fa-x"></i></a>
         </div>
         <div class="srodekHeader">
             Zarejestruj się
         </div>
     </div>
     <hr>
-    <form>
+    <form method="post" action="php/rejestracja.php">
         <label>Data Urodzenia</label>
-        <input type="date" placeholder="Data" id="dataUrodzenia" required><br>
+        <input type="date" placeholder="Data" id="dataUrodzenia" name="dataUrodzenia" required><br>
         <label>Nazwa Użytkownika</label>
-        <input type="text" placeholder="Nick" required><br>
+        <input type="text" placeholder="Nick" name="daneKontaktowe" required><br>
         <label>Hasło <i id="widocznoscHasla" class="fa-solid fa-eye"></i></label>
-        <input id="hasloRejestracja" type="password" placeholder="Hasło" required><br>
+        <input id="hasloRejestracja" type="password" placeholder="Hasło" name="haslo" required><br>
+        <label>Płeć</label>
         <div class="plecPrzyciski">
-            <button type="button" id="mezczyzna" class="plecPrzycisk"><i class="fa-solid fa-person"></i></button>
-            <button type="button" id="kobieta" class="plecPrzycisk"><i class="fa-solid fa-person-dress"></i></button>
+            <button type="button" class="plecPrzyciskM" onclick="wyborPlci('mezczyzna')"><i class="fa-solid fa-person"></i></button>
+            <button type="button" class="plecPrzyciskK" onclick="wyborPlci('kobieta')"><i class="fa-solid fa-person-dress"></i></button>
         </div>
+        <input type="hidden" name="plec" id="plecBaza" required>
         <br>
         <button type="submit" class="rejestracjaPrzycisk">Zarejestruj się</button>
     </form>
@@ -85,6 +61,26 @@
     minimalnyRok.setFullYear(aktualnyRok.getFullYear() - 13);
 
     document.getElementById("dataUrodzenia").setAttribute("max", minimalnyRok.toISOString().split('T')[0]);
+
+    // ZMIANA KOLORU ITD PRZYCISKU PO NACIŚNIĘCIU GO
+    let wybranaPlec = "mezczyzna";
+
+    function wyborPlci(plec) {
+        if (plec === "mezczyzna") {
+            wybranaPlec = "mezczyzna";
+            document.querySelector(".plecPrzyciskM").classList.add("wybrano");
+            document.querySelector(".plecPrzyciskK").classList.remove("wybrano");
+            document.querySelector(".plecPrzyciskM").classList.add("wybranoTlo");
+            document.querySelector(".plecPrzyciskK").classList.remove("wybranoTlo");
+        } else if (plec === "kobieta") {
+            wybranaPlec = "kobieta";
+            document.querySelector(".plecPrzyciskK").classList.add("wybrano");
+            document.querySelector(".plecPrzyciskM").classList.remove("wybrano");
+            document.querySelector(".plecPrzyciskK").classList.add("wybranoTlo");
+            document.querySelector(".plecPrzyciskM").classList.remove("wybranoTlo");
+        }
+        document.getElementById("plecBaza").value = wybranaPlec;
+    }
 </script>
 </body>
 </body>
