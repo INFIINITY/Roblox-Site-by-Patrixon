@@ -85,19 +85,6 @@
     minimalnyRok.setFullYear(aktualnyRok.getFullYear() - 13);
 
     document.getElementById("dataUrodzenia").setAttribute("max", minimalnyRok.toISOString().split('T')[0]);
-
-    // ZMIANA KOLORU PODCZAS WYBORU PŁCI
-    const mezczyznaBtn = document.getElementById('mezczyzna');
-    const kobietaBtn = document.getElementById('kobieta');
-    
-    mezczyznaBtn.addEventListener('click', function() {
-        document.body.style.backgroundColor = 'blue';
-    });
-    
-    kobietaBtn.addEventListener('click', function() {
-        document.body.style.backgroundColor = 'pink';
-    });
-
 </script>
 </body>
 </body>

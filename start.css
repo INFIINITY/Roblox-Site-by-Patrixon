@@ -1,20 +1,19 @@
 /* Custom Czcionka od Robloxa */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
+/* Ustawienie niestandardowej czcionki jako domyślnej dla całej strony */
 * {
-    /* czcionka calej strony */
     font-family: 'Noto Sans', sans-serif;
 }
 
+/* Ustawienie tła strony na zdjęcie i powiększenie tła */
 body {
-    /* zdjecie w tle strony */
     background-image: url('zdjecia/tlo.jpg');
-    /* powiększenie tła */
     background-size: 150%;
-  }
+}
   
+/* Dodanie przyciemnienia na tło za pomocą gradientu liniowego */
 body::before {
-    /* przyciemnienie tła */
     content: "";
     display: block;
     position: fixed;
@@ -25,7 +24,8 @@ body::before {
     background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4));
     z-index: -1;
 }
-  
+
+/* Container wyśrodkowany w pionie */
 .container {
     display: flex;
     flex-direction: column;
@@ -33,13 +33,14 @@ body::before {
     align-items: center;
     margin-top: 20vh;
 }
-  
+
+/* Logo pomniejszone   */
 .logo {
     max-width: 100%;
-    /* pomniejszenie loga */
     transform: scale(0.2);
 }
-  
+
+/* Style dla przycisków */
 .container > button,
 form > button,
 form > input,
@@ -56,6 +57,7 @@ form > input,
     font-weight: bold;
 }
 
+/* Specjalne style dla przycisku rejestracji */
 .rejestracjaPrzycisk {
     background-color: #08b46c;
     border: none !important;
@@ -63,21 +65,25 @@ form > input,
     width: 97%;
 }
 
+/* Zwiększenie przezroczystości po najechaniu na przycisk */
 .container > .rejestrPrzycisk:hover,
 form > .zalogujPrzycisk:hover,
 .rejestracjaPrzycisk:hover {
     opacity: 0.8;
 }
 
+/* Specjalne style dla przycisku logowania */
 .container > .logPrzycisk {
     background-color: rgba(255, 255, 255, 0.0); /* białe tło z przezroczystością 50% */
     color: rgb(201, 201, 201);
 }
 
+/* Zwiększenie przezroczystości po najechaniu na przycisk */
 .container > .logPrzycisk:hover {
     opacity: 0.65;
 }
 
+/* Style dla pól tekstowych */
 form > input,
 .containerRejestracja > input {
     width: 93.5%;
@@ -88,15 +94,18 @@ form > input,
     font-weight: normal;
 }
 
+/* Kolor placeholder */
 form > input::placeholder,
 .containerRejestracja > input::placeholder {
     color: rgb(129, 129, 129);
 }
 
+/* Zwiększenie grubości obramowania po najechaniu na pole tekstowe */
 form > input:hover {
     border-color: white;
 }
 
+/* Przycisk powrotu do strony głównej */
 .powrot{
     position: absolute;
     top: 20px;
@@ -111,6 +120,7 @@ form > input:hover {
     align-items: center;
 }
 
+/* Container rejestracji */
 .containerRejestracja {
     height: 93vh;
     display: flex;
@@ -122,7 +132,8 @@ form > input:hover {
     padding: 0 20px 20px;
     color: white;
 }
-  
+
+/* Taki nagłówek u góry containera od rejestracji */
 .headerContainer {
     display: flex;
     justify-content: space-between;
@@ -132,21 +143,25 @@ form > input:hover {
     font-size: 150%;
     padding: 2% 0 2% 0;
 }
-  
+
+/* klasa od wyśrodkowania elementu w headerze containera od rejestracji  */
 .srodekHeader {
     flex-grow: 1;
     text-align: center;
 }
-  
+
+/* przycisk powrótu do strony głównej, który znajduje się w środku containera */
 .powrotRejestracja a {
     text-decoration: none;
     color: white;
 }
 
+/* Po prostu zwiększenie HR bo przez padding w containerze rejestracji nie chciało działać */
 hr {
     width: 100%;
 }
 
+/* Odwrócenie koloru ikonki kalndarza w input date, domyślny kolor czarny, teraz biały */
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
