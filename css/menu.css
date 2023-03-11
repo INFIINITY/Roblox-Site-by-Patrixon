@@ -1,0 +1,161 @@
+@font-face {
+  font-family: 'Gotham ScreenSmart';
+  src: url('../czcionki/GothamSSm-Book.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Gotham ScreenSmart', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Górny pasek menu */
+#pasek {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  height: 50px;
+  padding: 0 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* dodaj z-index */
+}
+
+/* Górne menu podzielone na container lewy */
+#lewy-podzial {
+  display: flex;
+  align-items: center;
+}
+
+/* Container od logo */
+#logo-podzial {
+  margin-right: 10px;
+}
+
+/* Zdjęcie w containerze logo */
+#logo-podzial img {
+  height: 32px;
+}
+
+/* Główne menu górne, list nav itd */
+#menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Li z menu górnego */
+#menu li {
+  margin: 0 35px 0 35px;
+  position: relative;
+}
+
+/* Li z menu górnego ostatni element tzw. ostanie dziecko */
+#menu li:last-child {
+  margin: 0 35px 0 35px;
+}
+
+#menu li a,
+#lewa-nav a  {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Po najechaniu zmienia kolorek */
+#menu li a:hover,
+#lewa-nav a:hover {
+  color: #0077FF;
+}
+
+
+#menu li a::after,
+#lewa-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #0077FF;
+  transition: all 0.3s ease-in-out;
+}
+
+#menu li a:hover::after,
+#lewa-nav a:hover::after {
+  width: 100%;
+}
+
+/* Wyszukiwarka */
+input[type="text"] {
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+/* Prawy container górnego menu */
+#prawy-podzial {
+  display: flex;
+  align-items: center;
+}
+
+/* Nazwa uzytkownika */
+#uzytkownik,
+i {
+  margin: 0 10px 0 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* <i> po najechaniu */
+i:hover {
+  color: #0077FF;
+}
+
+/* Pasek lewego menu */
+#lewe-menu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  width: 170px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 999; /* zmień z-index na niższą wartość */
+  border-top: 1px solid black;
+}
+
+/* Nazwa użytkownika w lewym menu */
+#uzytkownik2 {
+  margin-bottom: 20px;
+}
+
+/* h1 w nazwie uzytkownika */
+#uzytkownik2 h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* hr w nazwie uzytkownika */
+#uzytkownik2 hr {
+  margin-top: 5px;
+  border: none;
+  border-top: 1px solid #fff;
+}
+
+/* Główne menu lewe  */
+#lewa-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#lewa-nav li {
+  margin-bottom: 10px;
+}
