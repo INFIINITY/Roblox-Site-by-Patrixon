@@ -1,7 +1,8 @@
 <?php
 include 'connect.php';
+session_start();
 
-if (isset($_COOKIE['zarejestrowany'])) {
+if (isset($_SESSION['zarejestrowany'])) {
     header("Location: ../main.php");
     exit();
 }
@@ -22,7 +23,8 @@ if (isset($_POST['dataUrodzenia']) && isset($_POST['nazwaUzytkownika']) && isset
         $sql = "INSERT INTO uzytkownicy (nazwa_uzytkownika, haslo, data_urodzenia, plec) VALUES ('$nazwaUzytkownika', '$haslo', '$dataUrodzenia', '$plec')";
 
         if ($conn->query($sql) === TRUE) {
-            setcookie('zarejestrowany', true, time() + 3600, "/");
+            $_SESSION['zarejestrowany'] = true;
+            $_SESSION['uzytkownik'] = $nazwaUzytkownika; // zapisanie nazwy użytkownika do sesji
             header("Location: ../main.php");
             exit();
         } else {
@@ -31,6 +33,5 @@ if (isset($_POST['dataUrodzenia']) && isset($_POST['nazwaUzytkownika']) && isset
     }
 
     $conn->close();
-
 }
 ?>

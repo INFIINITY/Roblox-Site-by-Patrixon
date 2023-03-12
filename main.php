@@ -1,5 +1,7 @@
 <?php
-if (!isset($_COOKIE['zalogowany']) && !isset($_COOKIE['zarejestrowany'])) {
+session_start();
+
+if (!isset($_SESSION['zalogowany']) && !isset($_SESSION['zarejestrowany'])) {
     header("Location: Z&R.php");
     exit();
 }

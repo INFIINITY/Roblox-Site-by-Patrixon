@@ -14,7 +14,7 @@
 <body>
 <div id="lewe-menu">
   <div id="uzytkownik2">
-    <h1>Patrixon</h1>
+    <h1><?php echo $_SESSION['uzytkownik']; ?></h1>
     <hr>
   </div>
   <ul id="lewa-nav">
